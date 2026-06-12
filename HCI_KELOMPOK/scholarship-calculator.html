@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Univexus | Scholarship Calculator</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <header class="navbar">
+
+        <a href="index.html" class="logo">
+
+            UNIV<span>EXUS</span>
+
+        </a>
+
+        <nav>
+
+            <a href="index.html">Home</a>
+            <a href="career-match.html">Career Match</a>
+            <a href="forum.html">Forum</a>
+
+            <div class="user-nav">
+
+                <span id="welcomeUser"></span>
+
+                <a href="login.html" class="btn-secondary" id="accountBtn">Sign In</a>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+    <section class="container">
+
+        <h2 class="section-title">
+
+            Scholarship Calculator
+
+        </h2>
+
+        <div class="scholarship-card">
+
+            <h3>Check Your Scholarship Eligibility</h3>
+
+            <br>
+
+            <label>Campus</label>
+
+            <select id="campus">
+
+                <option>Universitas Indonesia</option>
+                <option>Institut Teknologi Bandung</option>
+                <option>Universitas Gadjah Mada</option>
+                <option>BINUS University</option>
+                <option>Universitas Airlangga</option>
+
+            </select>
+
+            <br><br>
+
+            <label>Average Report Card Score</label>
+
+            <input
+                type="number"
+                id="score"
+                placeholder="Example: 92">
+
+            <br><br>
+
+            <label>Monthly Family Income (IDR)</label>
+
+            <input
+                type="number"
+                id="income"
+                placeholder="Example: 5000000">
+
+            <br><br>
+
+            <button
+                class="btn-primary"
+                onclick="calculateScholarship()">
+
+                Calculate Scholarship
+
+            </button>
+
+        </div>
+
+        <div
+            id="result"
+            class="scholarship-result">
+
+        </div>
+
+    </section>
+
+    <script src="js/scholarship.js"></script>
+
+    <script src="js/auth.js"></script>
+</body>
+
+</html>

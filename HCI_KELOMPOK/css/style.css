@@ -1,0 +1,1469 @@
+/* =====================================================
+   UNIVEXUS MASTER STYLESHEET
+===================================================== */
+
+/* =====================================================
+   1. GOOGLE FONTS
+===================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+/* =====================================================
+   2. VARIABLES
+===================================================== */
+
+:root {
+
+    --primary-blue: #0F2C59;
+    --primary-blue-dark: #081C3A;
+
+    --sage-green: #4F6F52;
+    --sage-green-light: #739072;
+
+    --accent-gold: #C5A880;
+
+    --bg-cream: #FBFBFA;
+
+    --text-dark: #1A1A1A;
+    --text-muted: #666666;
+
+    --border-color: #E5E5E5;
+
+    --shadow-sm: 0 5px 15px rgba(0,0,0,0.04);
+    --shadow-md: 0 10px 30px rgba(0,0,0,0.06);
+    --shadow-lg: 0 20px 50px rgba(0,0,0,0.10);
+
+    --radius-sm: 10px;
+    --radius-md: 18px;
+    --radius-lg: 24px;
+
+    --transition: all .3s ease;
+
+}
+
+/* =====================================================
+   3. RESET
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Plus Jakarta Sans',sans-serif;
+    background:var(--bg-cream);
+    color:var(--text-dark);
+    line-height:1.7;
+    overflow-x:hidden;
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+ul{
+    list-style:none;
+}
+
+.container{
+    width:min(1200px,90%);
+    margin:auto;
+}
+
+section{
+    padding:100px 0;
+}
+
+h1,h2,h3,h4{
+    line-height:1.2;
+}
+
+.serif,
+.hero h1,
+.section-title{
+    font-family:'Playfair Display',serif;
+}
+
+/* =====================================================
+   4. BUTTONS
+===================================================== */
+
+.btn-primary{
+    background:var(--primary-blue);
+    color:white;
+    padding:14px 28px;
+    border-radius:999px;
+    font-weight:600;
+    transition:var(--transition);
+    display:inline-block;
+}
+
+.btn-primary:hover{
+    transform:translateY(-3px);
+    background:var(--primary-blue-dark);
+}
+
+.btn-secondary{
+    background:var(--primary-blue);
+    border:1px solid var(--border-color);
+    padding:14px 28px;
+    border-radius:999px;
+    font-weight:600;
+    transition:var(--transition);
+}
+
+.btn-secondary:hover{
+    border-color:var(--accent-gold);
+}
+
+.btn-green{
+    background:var(--sage-green);
+    color:white;
+    padding:14px 28px;
+    border-radius:999px;
+    font-weight:600;
+}
+
+/* =====================================================
+   5. NAVBAR
+===================================================== */
+
+.navbar{
+    position:sticky;
+    top:0;
+    z-index:999;
+
+    background:rgba(251,251,250,.95);
+    backdrop-filter:blur(12px);
+
+    border-bottom:1px solid rgba(0,0,0,.05);
+
+    box-shadow:0 2px 15px rgba(0,0,0,0.05);
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:18px 5%;
+}
+
+.logo{
+    font-size:26px;
+    font-weight:700;
+    color:var(--primary-blue);
+}
+
+.logo span{
+    color:var(--accent-gold);
+}
+
+.navbar nav{
+    display:flex;
+    gap:30px;
+    align-items:center;
+}
+
+.navbar nav a{
+    font-size:14px;
+    font-weight:600;
+}
+
+.navbar nav a:hover{
+    color:var(--sage-green);
+}
+
+/* =====================================================
+   6. HERO
+===================================================== */
+
+.hero{
+
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    position:relative;
+
+    background:
+    linear-gradient(
+    rgba(15,44,89,.75),
+    rgba(15,44,89,.75)),
+    url("../images/hero-campus.jpg");
+
+    background-size:cover;
+    background-position:center;
+
+    color:white;
+}
+
+.hero-content{
+    max-width:850px;
+    padding:0 20px;
+}
+
+.hero h1{
+    font-size:72px;
+    font-weight:600;
+    color:white;
+    margin-bottom:25px;
+}
+
+.hero p{
+    max-width:700px;
+    margin:auto;
+
+    color:rgba(255,255,255,0.9);
+
+    font-size:20px;
+}
+
+.hero-buttons{
+
+    margin-top:40px;
+
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+/* =====================================================
+   7. STATS
+===================================================== */
+
+.stats{
+
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+
+    gap:25px;
+
+    width:min(1200px,90%);
+    margin:auto;
+}
+
+.stat-card{
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:35px;
+
+    text-align:center;
+
+    box-shadow:var(--shadow-sm);
+}
+
+.stat-card h2{
+
+    color:var(--primary-blue);
+
+    font-size:40px;
+
+    margin-bottom:10px;
+}
+
+.stat-card p{
+    color:var(--text-muted);
+}
+
+/* =====================================================
+   8. FEATURES
+===================================================== */
+
+.features{
+    text-align:center;
+}
+
+.section-title{
+
+    font-size:52px;
+
+    color:var(--primary-blue);
+
+    margin-bottom:60px;
+}
+
+.feature-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:30px;
+
+    width:min(1200px,90%);
+    margin:auto;
+}
+
+.feature-card{
+
+    background:white;
+
+    border-radius:24px;
+
+    padding:40px;
+
+    box-shadow:var(--shadow-sm);
+
+    transition:var(--transition);
+}
+
+.feature-card:hover{
+    transform:translateY(-10px);
+}
+
+.feature-card i{
+
+    font-size:40px;
+
+    color:var(--accent-gold);
+
+    margin-bottom:20px;
+}
+
+.feature-card h3{
+
+    margin-bottom:15px;
+
+    color:var(--primary-blue);
+}
+
+.feature-card p{
+    color:var(--text-muted);
+}
+
+/* =====================================================
+   9. WHY UNIVEXUS
+===================================================== */
+
+.why-univexus{
+
+    width:min(1200px,90%);
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+}
+
+.why-univexus h2{
+
+    font-size:48px;
+
+    color:var(--primary-blue);
+
+    margin-bottom:20px;
+}
+
+.benefit{
+
+    background:white;
+
+    padding:18px 25px;
+
+    margin-bottom:15px;
+
+    border-radius:15px;
+
+    box-shadow:var(--shadow-sm);
+
+    font-weight:600;
+}
+
+/* =====================================================
+   10. TESTIMONIALS
+===================================================== */
+
+.testimonials{
+    text-align:center;
+}
+
+.testimonial-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:30px;
+
+    width:min(1000px,90%);
+    margin:auto;
+}
+
+.testimonial-card{
+
+    background:white;
+
+    border-radius:24px;
+
+    padding:40px;
+
+    box-shadow:var(--shadow-sm);
+
+    text-align:left;
+}
+
+.testimonial-card p{
+
+    margin-bottom:20px;
+
+    font-size:18px;
+}
+
+.testimonial-card h4{
+    color:var(--sage-green);
+}
+
+/* =====================================================
+   11. CAMPUS EXPLORER
+===================================================== */
+
+.explore-layout{
+
+    display:grid;
+
+    grid-template-columns:320px 1fr;
+
+    gap:35px;
+}
+
+/* =====================================================
+   12. SIDEBAR
+===================================================== */
+
+.sidebar-filter{
+
+    background:white;
+
+    border-radius:24px;
+
+    padding:30px;
+
+    box-shadow:var(--shadow-sm);
+
+    height:fit-content;
+}
+
+.filter-section{
+
+    margin-bottom:25px;
+
+    padding-bottom:20px;
+
+    border-bottom:1px solid var(--border-color);
+}
+
+.filter-title{
+
+    font-weight:700;
+
+    color:var(--primary-blue);
+
+    margin-bottom:15px;
+}
+
+/* =====================================================
+   13. CAMPUS GRID
+===================================================== */
+
+.campus-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fill,minmax(320px,1fr));
+
+    gap:25px;
+}
+
+.campus-card{
+
+    background:white;
+
+    border-radius:24px;
+
+    overflow:hidden;
+
+    box-shadow:var(--shadow-md);
+
+    transition:var(--transition);
+}
+
+.campus-card:hover{
+    transform:translateY(-10px) scale(1.02);
+    box-shadow:var(--shadow-lg);
+}
+
+.card-img-wrapper{
+    height:220px;
+    overflow:hidden;
+}
+
+.card-img-wrapper img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+}
+
+.card-content{
+    padding:25px;
+}
+
+.campus-name{
+
+    color:var(--primary-blue);
+
+    margin-bottom:10px;
+}
+
+.campus-loc{
+    color:var(--text-muted);
+}
+
+.card-actions{
+
+    display:flex;
+
+    gap:10px;
+
+    margin-top:20px;
+}
+
+.card-img-wrapper img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+
+    transition:var(--transition);
+}
+
+.campus-card:hover .card-img-wrapper img{
+    transform:scale(1.08);
+}
+
+/* =====================================================
+   14. LOGIN PAGE
+===================================================== */
+
+.login-wrapper{
+
+    min-height:100vh;
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+}
+
+.login-left{
+
+    background:linear-gradient(
+    135deg,
+    var(--primary-blue),
+    var(--sage-green));
+
+    color:white;
+
+    padding:80px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.login-left h1{
+    font-size:56px;
+    margin-bottom:20px;
+}
+
+.login-right{
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:40px;
+}
+
+.auth-card{
+
+    width:100%;
+    max-width:450px;
+
+    background:white;
+
+    border-radius:24px;
+
+    padding:40px;
+
+    box-shadow:var(--shadow-md);
+}
+
+.auth-card h2{
+
+    color:var(--primary-blue);
+
+    margin-bottom:25px;
+}
+
+.auth-card input{
+
+    width:100%;
+
+    padding:14px;
+
+    margin-bottom:15px;
+
+    border:1px solid var(--border-color);
+
+    border-radius:12px;
+}
+
+/* =====================================================
+   15. SPECIFICATIONS
+===================================================== */
+
+.specs-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:0;
+
+    background:white;
+
+    border-radius:24px;
+
+    overflow:hidden;
+
+    box-shadow:var(--shadow-md);
+}
+
+.grid-header{
+
+    background:var(--primary-blue);
+
+    color:white;
+
+    padding:25px;
+
+    text-align:center;
+
+    font-size:22px;
+
+    font-weight:700;
+}
+
+.grid-cell{
+
+    padding:25px;
+
+    border-bottom:1px solid var(--border-color);
+}
+
+/* =====================================================
+   16. FOOTER
+===================================================== */
+
+footer{
+
+    background:var(--primary-blue);
+
+    color:white;
+
+    padding:80px 5%;
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr 1fr;
+
+    gap:40px;
+}
+
+footer h3,
+footer h4{
+    margin-bottom:15px;
+}
+
+footer a{
+
+    display:block;
+
+    margin-bottom:10px;
+
+    opacity:.8;
+}
+
+footer a:hover{
+    opacity:1;
+}
+
+footer{
+    border-top:4px solid var(--accent-gold);
+}
+
+/* =====================================================
+   17. RESPONSIVE
+===================================================== */
+
+@media(max-width:992px){
+
+    .hero h1{
+        font-size:54px;
+    }
+
+    .stats{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .feature-grid{
+        grid-template-columns:1fr;
+    }
+
+    .testimonial-grid{
+        grid-template-columns:1fr;
+    }
+
+    .why-univexus{
+        grid-template-columns:1fr;
+    }
+
+    .explore-layout{
+        grid-template-columns:1fr;
+    }
+
+    .login-wrapper{
+        grid-template-columns:1fr;
+    }
+
+    .specs-grid{
+        grid-template-columns:1fr;
+    }
+
+    footer{
+        grid-template-columns:1fr;
+    }
+}
+
+@media(max-width:768px){
+
+    .navbar{
+        flex-direction:column;
+        gap:20px;
+    }
+
+    .navbar nav{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .hero h1{
+        font-size:42px;
+    }
+
+    .hero p{
+        font-size:18px;
+    }
+
+    .stats{
+        grid-template-columns:1fr;
+    }
+
+    .section-title{
+        font-size:38px;
+    }
+
+    .trusted-grid{
+        gap:25px;
+        font-size:18px;
+    }
+    
+    .hero-search{
+        flex-direction:column;
+    }
+    
+    .hero-search input{
+        border-radius:50px;
+        margin-bottom:10px;
+    }
+    
+    .hero-search button{
+        border-radius:50px;
+    }
+
+}
+
+/* =====================================================
+   18. TRUSTED UNIVERSITIES
+===================================================== */
+
+.trusted{
+
+    padding:60px 0;
+
+    text-align:center;
+}
+
+.trusted p{
+
+    color:#777;
+
+    margin-bottom:20px;
+}
+
+.trusted-grid{
+
+    display:flex;
+    justify-content:center;
+    gap:60px;
+
+    flex-wrap:wrap;
+
+    font-size:24px;
+    font-weight:700;
+
+    color:var(--primary-blue);
+}
+
+.trusted-grid span{
+    transition:var(--transition);
+    cursor:pointer;
+}
+
+.trusted-grid span:hover{
+    color:var(--accent-gold);
+    transform:translateY(-3px);
+}
+
+.hero-search{
+    margin-top:40px;
+
+    width:100%;
+    max-width:700px;
+
+    display:flex;
+
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.hero-search input{
+
+    flex:1;
+
+    padding:18px;
+
+    border:none;
+
+    border-radius:50px 0 0 50px;
+}
+
+.hero-search button{
+    border:none;
+    background:var(--accent-gold);
+    padding:18px 30px;
+    cursor:pointer;
+    border-radius:0 50px 50px 0;
+    font-weight:700;
+
+    transition:var(--transition);
+}
+
+.hero-search button:hover{
+    background:#b8956d;
+}
+
+.features{
+    background:white;
+}
+
+.testimonials{
+    background:#f7f7f7;
+}
+
+.explore{
+    background:white;
+}
+
+.cta{
+
+    background:var(--primary-blue);
+
+    color:white;
+
+    text-align:center;
+
+    padding:100px 20px;
+}
+
+.cta h2{
+
+    font-size:52px;
+
+    margin-bottom:20px;
+}
+
+.cta p{
+
+    margin-bottom:30px;
+}
+
+.cta .btn-primary{
+    background:white;
+    color:var(--primary-blue);
+}
+
+.cta .btn-primary:hover{
+    background:#f2f2f2;
+}
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.hero-content,
+.stat-card,
+.feature-card,
+.campus-card{
+    animation:fadeUp .8s ease;
+}
+
+.form-group{
+    margin-bottom:18px;
+}
+
+.form-group label{
+    display:block;
+    margin-bottom:8px;
+    font-weight:600;
+}
+
+.auth-card input{
+    transition:var(--transition);
+}
+
+.auth-card input:focus{
+    outline:none;
+    border-color:var(--accent-gold);
+    box-shadow:0 0 0 3px rgba(197,168,128,0.2);
+}
+
+.auth-btn{
+    width:100%;
+    border:none;
+    cursor:pointer;
+    margin-top:10px;
+}
+
+.auth-links{
+    display:flex;
+    justify-content:space-between;
+    margin-top:15px;
+    font-size:14px;
+    color:var(--text-muted);
+}
+
+.auth-links a:hover{
+    color:var(--primary-blue);
+}
+
+.auth-footer{
+    text-align:center;
+    margin-top:20px;
+    color:var(--text-muted);
+}
+
+.auth-footer a{
+    color:var(--primary-blue);
+    font-weight:600;
+}
+
+.interest-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(220px,1fr));
+
+    gap:15px;
+
+    margin-bottom:40px;
+}
+
+.interest-card{
+
+    background:white;
+
+    padding:18px;
+
+    border-radius:16px;
+
+    box-shadow:var(--shadow-sm);
+
+    cursor:pointer;
+
+    transition:var(--transition);
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+}
+
+.interest-card:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:var(--shadow-md);
+}
+
+.interest-card input{
+
+    transform:scale(1.2);
+}
+
+#careerForm input[type="number"]{
+
+    width:100%;
+
+    padding:14px;
+
+    margin-top:8px;
+
+    border:1px solid var(--border-color);
+
+    border-radius:12px;
+}
+
+#studentProfile{
+
+    border-left:6px solid var(--accent-gold);
+}
+
+#majorResults .campus-card{
+
+    text-align:center;
+}
+
+#majorResults h3{
+
+    color:var(--sage-green);
+
+    font-size:32px;
+}
+
+#universityResults .campus-card{
+
+    transition:var(--transition);
+}
+
+#universityResults .campus-card:hover{
+
+    transform:translateY(-8px);
+}
+
+/* ==========================================
+   EXPLORE TITLE CENTERING
+========================================== */
+
+.explore-subtitle{
+
+    text-align:center;
+
+    max-width:700px;
+
+    margin:0 auto 60px auto;
+
+    color:var(--text-muted);
+
+    font-size:18px;
+}
+
+/* ==========================================
+   UNIVERSITY COMPARISON
+========================================== */
+
+.comparison-table{
+
+    background:white;
+
+    border-radius:24px;
+
+    overflow:hidden;
+
+    box-shadow:var(--shadow-md);
+
+    margin-top:50px;
+}
+
+.compare-row{
+
+    display:grid;
+
+    grid-template-columns:
+    1.2fr 1fr 1fr 1fr;
+
+    border-bottom:
+    1px solid var(--border-color);
+}
+
+.compare-row div{
+
+    padding:22px;
+
+    text-align:center;
+}
+
+.compare-header{
+
+    background:var(--primary-blue);
+
+    color:white;
+
+    font-weight:700;
+}
+
+.compare-row:nth-child(even){
+
+    background:#fafafa;
+}
+
+.compare-row:hover{
+
+    background:#f3f7ff;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+    .compare-row{
+
+        grid-template-columns:1fr;
+    }
+
+    .compare-row div{
+
+        border-bottom:
+        1px solid var(--border-color);
+    }
+}
+
+/* =====================================================
+   FORUM PAGE
+===================================================== */
+
+.forum-hero{
+    background:linear-gradient(
+        135deg,
+        var(--primary-blue),
+        var(--sage-green)
+    );
+
+    color:white;
+    text-align:center;
+    padding:120px 20px;
+}
+
+.forum-hero h1{
+    font-size:64px;
+    margin-bottom:20px;
+}
+
+.forum-categories{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.category-pill{
+    background:white;
+    padding:12px 24px;
+    border-radius:999px;
+    font-weight:600;
+    box-shadow:var(--shadow-sm);
+    cursor:pointer;
+    transition:var(--transition);
+}
+
+.category-pill:hover{
+    background:var(--accent-gold);
+    color:white;
+}
+
+.forum-posts{
+    display:flex;
+    flex-direction:column;
+    gap:25px;
+}
+
+.post-card{
+    background:white;
+    padding:30px;
+    border-radius:24px;
+    box-shadow:var(--shadow-sm);
+    transition:var(--transition);
+}
+
+.post-card:hover{
+    transform:translateY(-5px);
+    box-shadow:var(--shadow-md);
+}
+
+.post-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    margin-bottom:15px;
+}
+
+.post-author{
+    color:var(--text-muted);
+    font-size:14px;
+}
+
+.reply-count{
+    color:var(--sage-green);
+    font-weight:700;
+}
+
+.create-btn{
+    margin-top:30px;
+}
+
+.modal{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.55);
+    z-index:9999;
+
+    justify-content:center;
+    align-items:center;
+}
+
+.modal-content{
+    background:white;
+    width:90%;
+    max-width:700px;
+    border-radius:24px;
+    padding:35px;
+    animation:fadeUp .3s ease;
+}
+
+.modal-content h2{
+    color:var(--primary-blue);
+    margin-bottom:20px;
+}
+
+.modal-content input,
+.modal-content textarea,
+.modal-content select{
+
+    width:100%;
+    padding:15px;
+    border:1px solid var(--border-color);
+    border-radius:12px;
+    margin-bottom:15px;
+    font-family:inherit;
+}
+
+.modal-content textarea{
+    min-height:160px;
+    resize:vertical;
+}
+
+.modal-buttons{
+    display:flex;
+    gap:10px;
+    justify-content:flex-end;
+}
+
+.empty-posts{
+    text-align:center;
+    color:var(--text-muted);
+    padding:50px;
+}
+
+/* =====================================================
+   HOMEPAGE FORUM PREVIEW
+===================================================== */
+
+.forum-preview{
+
+    background:#f7f7f7;
+
+    text-align:center;
+}
+
+.forum-subtitle{
+
+    max-width:700px;
+
+    margin:0 auto 50px;
+
+    color:var(--text-muted);
+}
+
+.forum-preview-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:30px;
+}
+
+.forum-preview-card{
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:24px;
+
+    text-align:left;
+
+    box-shadow:var(--shadow-sm);
+
+    transition:var(--transition);
+}
+
+.forum-preview-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:var(--shadow-lg);
+}
+
+.forum-preview-card h3{
+
+    color:var(--primary-blue);
+
+    margin-bottom:15px;
+}
+
+.forum-preview-card p{
+
+    color:var(--text-muted);
+
+    margin-bottom:20px;
+}
+
+.forum-preview-card span{
+
+    color:var(--sage-green);
+
+    font-weight:700;
+}
+
+@media(max-width:992px){
+
+    .forum-preview-grid{
+
+        grid-template-columns:1fr;
+    }
+}
+
+.user-nav{
+
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.user-nav span{
+
+    font-weight:600;
+    color:var(--primary-blue);
+}
+
+/* =========================================
+   SCHOLARSHIP CALCULATOR
+========================================= */
+
+.scholarship-card{
+
+    background:white;
+
+    max-width:700px;
+
+    margin:auto;
+
+    padding:40px;
+
+    border-radius:24px;
+
+    box-shadow:var(--shadow-md);
+}
+
+.scholarship-card input,
+.scholarship-card select{
+
+    width:100%;
+
+    padding:14px;
+
+    border:1px solid var(--border-color);
+
+    border-radius:12px;
+
+    margin-top:8px;
+}
+
+.scholarship-result{
+
+    display:none;
+
+    margin-top:40px;
+
+    background:white;
+
+    padding:35px;
+
+    border-radius:24px;
+
+    box-shadow:var(--shadow-md);
+
+    text-align:center;
+}
+
+.scholarship-result h2{
+
+    color:var(--primary-blue);
+}
+
+.scholarship-result h3{
+
+    color:var(--sage-green);
+}

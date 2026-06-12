@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Univexus | Student Forum
+    </title>
+
+    <link rel="stylesheet"
+          href="css/style.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<!-- CREATE DISCUSSION MODAL -->
+
+<div class="modal"
+     id="forumModal">
+
+    <div class="modal-content">
+
+        <h2>
+            Create Discussion
+        </h2>
+
+        <form id="discussionForm">
+
+            <input
+                type="text"
+                id="title"
+                placeholder="Discussion Title"
+                required>
+
+            <input
+                type="text"
+                id="name"
+                placeholder="Display Name"
+                required>
+
+            <input
+                type="email"
+                id="email"
+                placeholder="Email"
+                required>
+
+            <select
+                id="category">
+
+                <option>
+                    Universities
+                </option>
+
+                <option>
+                    Majors
+                </option>
+
+                <option>
+                    Scholarships
+                </option>
+
+                <option>
+                    Career Advice
+                </option>
+
+            </select>
+
+            <textarea
+                id="content"
+                placeholder="What would you like to discuss?"
+                required>
+            </textarea>
+
+            <div class="modal-buttons">
+
+                <button
+                    type="button"
+                    class="btn-secondary"
+                    id="closeForumModal">
+
+                    Cancel
+
+                </button>
+
+                <button
+                    type="submit"
+                    class="btn-primary">
+
+                    Publish
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+<body>
+
+    <!-- ========================================= -->
+    <!-- NAVBAR -->
+    <!-- ========================================= -->
+
+    <header class="navbar">
+
+        <a href="index.html"
+           class="logo">
+
+            <i class="fa-solid fa-graduation-cap"></i>
+
+            UNIV<span>EXUS</span>
+
+        </a>
+
+        <nav>
+
+            <a href="index.html">Home</a>
+
+            <a href="career-match.html">Career Match</a>
+
+            <a href="scholarship-calculator.html">Scholarship Calculator</a>
+
+            <a href="specifications.html">Compare</a>
+
+            <a href="forum.html">Forum</a>
+
+            <div class="user-nav">
+
+                <span id="welcomeUser"></span>
+
+                <a href="login.html" class="btn-secondary" id="accountBtn">Sign In</a>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+    <!-- ========================================= -->
+    <!-- FORUM HERO -->
+    <!-- ========================================= -->
+
+    <section class="forum-hero">
+
+        <div class="container">
+
+            <h1>
+
+                Student Community Forum
+
+            </h1>
+
+            <p style="
+               max-width:700px;
+               margin:20px auto;
+               opacity:.9;
+               font-size:18px;
+            ">
+
+                Ask questions, share experiences,
+                discuss majors, scholarships,
+                universities and your future career.
+
+            </p>
+
+            <button
+                 class="btn-primary create-btn"
+                  id="openForumModal">
+
+                  <i class="fa-solid fa-plus"></i>
+
+                  Create Discussion
+
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- ========================================= -->
+    <!-- CATEGORIES -->
+    <!-- ========================================= -->
+
+    <section
+        style="padding-bottom:40px;">
+
+        <div class="container">
+
+            <div class="forum-categories">
+
+                <div class="category-pill">
+                    🎓 Universities
+                </div>
+
+                <div class="category-pill">
+                    📚 Majors
+                </div>
+
+                <div class="category-pill">
+                    💰 Scholarships
+                </div>
+
+                <div class="category-pill">
+                    📝 Entrance Exams
+                </div>
+
+                <div class="category-pill">
+                    💼 Career Advice
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ========================================= -->
+    <!-- POSTS -->
+    <!-- ========================================= -->
+
+    <section
+        style="padding-top:0;">
+
+        <div class="container">
+
+            <div class="forum-posts">
+
+                <div id="dynamicPosts"></div>
+
+                <!-- POST 1 -->
+
+                <div class="post-card">
+
+                    <div class="post-header">
+
+                        <div>
+
+                            <h3>
+
+                                Is ITB Computer Science difficult?
+
+                            </h3>
+
+                            <p class="post-author">
+
+                                Anonymous Student
+
+                                • anon01@forum.com
+
+                            </p>
+
+                        </div>
+
+                        <div class="reply-count">
+
+                            12 Replies
+
+                        </div>
+
+                    </div>
+
+                    <p>
+
+                        I am considering applying to
+                        ITB Computer Science next year.
+                        Can anyone share how difficult
+                        the coursework is and whether
+                        it is manageable?
+
+                    </p>
+
+                </div>
+
+                <!-- POST 2 -->
+
+                <div class="post-card">
+
+                    <div class="post-header">
+
+                        <div>
+
+                            <h3>
+
+                                Best university for Medicine?
+
+                            </h3>
+
+                            <p class="post-author">
+
+                                Sarah K.
+
+                                • sarahk@forum.com
+
+                            </p>
+
+                        </div>
+
+                        <div class="reply-count">
+
+                            18 Replies
+
+                        </div>
+
+                    </div>
+
+                    <p>
+
+                        I am deciding between UI and UGM.
+                        Which one has better facilities,
+                        hospital partnerships and overall
+                        reputation for Medicine?
+
+                    </p>
+
+                </div>
+
+                <!-- POST 3 -->
+
+                <div class="post-card">
+
+                    <div class="post-header">
+
+                        <div>
+
+                            <h3>
+
+                                Any scholarship recommendations?
+
+                            </h3>
+
+                            <p class="post-author">
+
+                                Anonymous Student
+
+                                • anon07@forum.com
+
+                            </p>
+
+                        </div>
+
+                        <div class="reply-count">
+
+                            9 Replies
+
+                        </div>
+
+                    </div>
+
+                    <p>
+
+                        My family income is limited.
+                        What scholarships should I
+                        look into for engineering programs?
+
+                    </p>
+
+                </div>
+
+                <!-- POST 4 -->
+
+                <div class="post-card">
+
+                    <div class="post-header">
+
+                        <div>
+
+                            <h3>
+
+                                Is BINUS worth the tuition cost?
+
+                            </h3>
+
+                            <p class="post-author">
+
+                                Michael R.
+
+                                • michaelr@forum.com
+
+                            </p>
+
+                        </div>
+
+                        <div class="reply-count">
+
+                            15 Replies
+
+                        </div>
+
+                    </div>
+
+                    <p>
+
+                        I heard BINUS has excellent
+                        industry connections.
+                        Is it worth the higher tuition
+                        compared to public universities?
+
+                    </p>
+
+                </div>
+
+                <!-- POST 5 -->
+
+                <div class="post-card">
+
+                    <div class="post-header">
+
+                        <div>
+
+                            <h3>
+
+                                Architecture vs Civil Engineering
+
+                            </h3>
+
+                            <p class="post-author">
+
+                                Anonymous Student
+
+                                • anon09@forum.com
+
+                            </p>
+
+                        </div>
+
+                        <div class="reply-count">
+
+                            21 Replies
+
+                        </div>
+
+                    </div>
+
+                    <p>
+
+                        I enjoy both design and mathematics.
+                        Which major offers better career
+                        opportunities in Indonesia?
+
+                    </p>
+
+                </div>
+
+                <!-- POST 6 -->
+
+                <div class="post-card">
+
+                    <div class="post-header">
+
+                        <div>
+
+                            <h3>
+
+                                How useful is the Career Match feature?
+
+                            </h3>
+
+                            <p class="post-author">
+
+                                Daniel H.
+
+                                • danielh@forum.com
+
+                            </p>
+
+                        </div>
+
+                        <div class="reply-count">
+
+                            6 Replies
+
+                        </div>
+
+                    </div>
+
+                    <p>
+
+                        I recently used the Univexus
+                        Career Match tool and it suggested
+                        Biomedical Engineering.
+                        Has anyone received accurate
+                        recommendations from it?
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ========================================= -->
+    <!-- CTA -->
+    <!-- ========================================= -->
+
+    <section class="cta">
+
+        <h2>
+
+            Join Thousands of Students
+
+        </h2>
+
+        <p>
+
+            Share your experiences,
+            ask questions,
+            and help others find
+            their future university.
+
+        </p>
+
+        <a href="#"
+           class="btn-primary">
+
+            Start a Discussion
+
+        </a>
+
+    </section>
+
+    <!-- ========================================= -->
+    <!-- FOOTER -->
+    <!-- ========================================= -->
+
+    <footer>
+
+        <div>
+
+            <h3>
+
+                Univexus
+
+            </h3>
+
+            <p>
+
+                Helping students discover
+                their ideal university,
+                major and career path.
+
+            </p>
+
+        </div>
+
+        <div>
+
+            <h4>
+
+                Explore
+
+            </h4>
+
+            <a href="index.html">
+
+                Home
+
+            </a>
+
+            <a href="career-match.html">
+
+                Career Match
+
+            </a>
+
+            <a href="specifications.html">
+
+                Compare Universities
+
+            </a>
+
+        </div>
+
+        <div>
+
+            <h4>
+
+                Contact
+
+            </h4>
+
+            <a href="#">
+
+                support@univexus.com
+
+            </a>
+
+            <a href="#">
+
+                +62 812 3456 7890
+
+            </a>
+
+        </div>
+
+    </footer>
+
+    <script src="js/forum.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+
+</html>

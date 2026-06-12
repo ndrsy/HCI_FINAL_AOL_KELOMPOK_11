@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Univexus | Results
+    </title>
+
+    <link rel="stylesheet"
+          href="css/style.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <header class="navbar">
+
+        <a href="index.html" class="logo">
+
+            <i class="fa-solid fa-graduation-cap"></i>
+
+            UNIV<span>EXUS</span>
+
+        </a>
+
+        <nav>
+
+            <a href="index.html">Home</a>
+
+            <a href="scholarship-calculator.html">Scholarship Calculator</a>
+            
+            <a href="career-match.html">Career Match</a>
+
+            <div class="user-nav">
+
+                <span id="welcomeUser"></span>
+
+                <a href="login.html" class="btn-secondary" id="accountBtn">Sign In</a>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+    <!-- HERO -->
+
+    <section class="hero"
+             style="min-height:45vh;">
+
+        <div class="hero-content">
+
+            <h1>
+
+                Your Personalized Results
+
+            </h1>
+
+            <p>
+
+                Based on your academic profile,
+                interests, and career ambitions.
+
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- RESULTS -->
+
+    <section>
+
+        <div class="container">
+
+            <!-- PROFILE -->
+
+            <div id="studentProfile"
+                 class="campus-card"
+                 style="margin-bottom:40px;">
+
+            </div>
+
+            <!-- TOP MATCHES -->
+
+            <h2 class="section-title"
+                style="
+                text-align:center;
+                margin-bottom:40px;
+                ">
+
+                Recommended Majors
+
+            </h2>
+
+            <div id="majorResults"
+                 class="campus-grid">
+
+            </div>
+
+            <!-- UNIVERSITY SECTION -->
+
+            <h2 class="section-title"
+                style="
+                text-align:center;
+                margin-top:80px;
+                margin-bottom:40px;
+                ">
+
+                Recommended Universities
+
+            </h2>
+
+            <div id="universityResults"
+                 class="campus-grid">
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- CTA -->
+
+    <section class="cta">
+
+        <h2>
+
+            Continue Exploring Your Future
+
+        </h2>
+
+        <p>
+
+            Compare campuses,
+            scholarships,
+            and admission requirements.
+
+        </p>
+
+        <a href="career-match.html"
+           class="btn-primary">
+
+            Recalculate Results
+
+        </a>
+
+    </section>
+
+    <script src="js/results.js"></script>
+
+    <script src="js/auth.js"></script>
+</body>
+
+</html>
